@@ -38,6 +38,10 @@ app.get('/waves', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'waves.html'));
 });
 
+app.get('/waves2', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'waves2.html'));
+});
+
 app.get('/cais', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'cais.html'));
 });

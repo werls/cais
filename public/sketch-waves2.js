@@ -44,7 +44,7 @@ async function setup() {
   lines = []; // recriar nas resize
   buildGrid();
 
-  thickness = modH * 0.85;
+  thickness = modH * 0.5;
 
   await loadMeteorologicalData();
 }
