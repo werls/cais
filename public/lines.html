@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@2.0.5/lib/p5.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <main>
+      <!-- <div class="fixed min-h-screen flex items-center justify-center">
+  <svg class="h-100 w-100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1.18017e-05 68.4445V0H63.7778L1.18017e-05 68.4445Z" fill="red"/>
+  <path d="M126 0H63.7778L63.7778 63.7778H126V0Z" fill="red"/>
+  <path d="M126 68.246H0V125.996H126V68.246Z" fill="red"/>
+  </svg>
+</div> -->
+    </main>
+    <script src="sketch-lines.js"></script>
+  
+  <!-- <svg class="fixed top-0 left-0 w-full h-full"
+  width="391" height="391" viewBox="0 0 391 391" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M391 391H0V0H391V391ZM238.846 174.763L153.402 100L100 142.722V238.846L164.083 292.248H292.248V238.846H153.402V174.763L238.846 238.846L292.248 185.443V100H238.846V174.763Z" fill="#0067FF"/>
+</svg> -->
+
+<!-- <svg class="fixed top-0 left-0 w-full h-full" width="285" height="285" viewBox="0 0 285 285" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M285 285H0V0H285V285ZM79 79V204.996H205V147.246H79.1846L142.777 79H79ZM142.777 79V142.777H205V79H142.777Z" fill="#0067FF"/>
+</svg> -->
+
+<div class="fixed bottom-0 left-0 m-4 p-2 bg-white bg-opacity-50 text-black text-sm font-mono rounded">
+  <ul>
+    <li>Velocidade do vento: <span id="windvel"></span></li>
+    <li>Direção do vento: <span id="winddir"></span></li>
+    <li>Altura da maré: <span id="sealevel"></span></li>
+  </ul>
+</div>
+</body>
+
+<footer>
+  <script>
+    onload = () => {
+      const windvel = document.getElementById('windvel');
+      const winddir = document.getElementById('winddir');
+      const sealevel = document.getElementById('sealevel');
+
+      console.log('AAAA', windSpeed)
+
+      fetch('/api/data').then(res => res.json()).then(data => {
+        windvel.textContent = data.windSpeed + ' km/h';
+        winddir.textContent = data.windDirection + '°';
+        sealevel.textContent = data.waveHeight + ' m';
+      });
+    }
+  </script>
+</footer>
+
+
+</html>

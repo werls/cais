@@ -34,6 +34,10 @@ app.get('/api/data', async (req, res) => {
 // serve public folder as static
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 app.get('/waves', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'waves.html'));
 });
@@ -44,6 +48,10 @@ app.get('/waves2', (req, res) => {
 
 app.get('/cais', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'cais.html'));
+});
+
+app.get('/lines', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'lines.html'));
 });
 
 app.listen(PORT, () => {
