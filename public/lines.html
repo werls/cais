@@ -44,8 +44,6 @@
       const winddir = document.getElementById('winddir');
       const sealevel = document.getElementById('sealevel');
 
-      console.log('AAAA', windSpeed)
-
       fetch('/api/data').then(res => res.json()).then(data => {
         windvel.textContent = data.windSpeed + ' km/h';
         winddir.textContent = data.windDirection + '°';

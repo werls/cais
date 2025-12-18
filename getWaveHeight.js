@@ -1,3 +1,5 @@
+// Cais das Artes nearest port: https://tabuamare.devtu.qzz.io/api/v1/nearest_harbor/es/[-20.31764, -40.29089]
+
 const getWaveHeight = async () => {
   try {
     const today = new Date();
@@ -12,7 +14,13 @@ const getWaveHeight = async () => {
 
     const url = `https://tabuamare.devtu.qzz.io/api/v1/tabua-mare/13/${monthStr}/${dayStr}/`;
     const response = await fetch(url);
-    const data = await response.json();
+    if (!response.ok) {
+      console.error(`HTTP error: ${response.status} ${response.statusText}`);
+      return null;
+    }
+    const text = await response.text();
+    console.log('API response text (first 200 chars):', text.substring(0, 200));
+    const data = JSON.parse(text);
 
     const now = new Date();
 

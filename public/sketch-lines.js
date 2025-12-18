@@ -33,6 +33,8 @@ async function setup() {
     waveHeight = geoData.waveHeight;
     windGusts = geoData.windGusts;
 
+    waveHeight = .5
+
     level = map(waveHeight, -0.2, 1.7, 0, 1);
     scl = level * 20;
 
